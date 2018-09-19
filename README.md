@@ -17,6 +17,9 @@
 * Travis-ci
 * Sonarcloud
 
+### Importante
+1. Los commits serán en español.
+1. Formatear el código con las recomendaciones propias del entorno IntelliJ.
 
 # Descripción del proyecto
 Se parte de un proyecto ya desarrollado, y se pretende realizar una ampliación del mismo.

@@ -51,4 +51,9 @@ class DecimalCollectionTest {
         assertThrows(ArithmeticException.class, () -> new DecimalCollection().higher());
     }
 
+    @Test
+    void testMedia() {
+        assertEquals(this.decimalCollection.media(),  1.5);
+    }
+
 }

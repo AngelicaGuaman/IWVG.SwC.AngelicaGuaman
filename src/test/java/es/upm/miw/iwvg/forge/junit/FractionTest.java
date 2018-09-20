@@ -5,13 +5,16 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class FractionTest {
     private Fraction fraction;
+    private Fraction fractionImpropia;
 
     @BeforeEach
     void before() {
         fraction = new Fraction(4, 2);
+        fractionImpropia = new Fraction(10, 5);
     }
 
     @Test
@@ -44,5 +47,10 @@ public class FractionTest {
     @Test
     void testDenominadorCero(){
         assertThrows(IllegalArgumentException.class, () -> new Fraction(2, 0).decimal());
+    }
+
+    @Test
+    void testIsImpropia() {
+        assertTrue(this.fractionImpropia.isImpropia());
     }
 }

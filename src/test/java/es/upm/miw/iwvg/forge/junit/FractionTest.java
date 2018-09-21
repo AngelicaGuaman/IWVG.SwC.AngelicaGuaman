@@ -3,18 +3,18 @@ package es.upm.miw.iwvg.forge.junit;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class FractionTest {
     private Fraction fraction;
     private Fraction fractionImpropia;
+    private Fraction fractionPropia;
 
     @BeforeEach
     void before() {
         fraction = new Fraction(4, 2);
         fractionImpropia = new Fraction(10, 5);
+        fractionPropia = new Fraction(2, 5);
     }
 
     @Test
@@ -52,5 +52,15 @@ public class FractionTest {
     @Test
     void testIsImpropia() {
         assertTrue(this.fractionImpropia.isImpropia());
+    }
+
+    @Test
+    void testIsPropia() {
+        assertNotNull(fraction);
+        assertNotNull(fractionImpropia);
+        assertNotNull(fractionPropia);
+        assertTrue(fractionPropia.isPropia());
+        assertFalse(fractionImpropia.isPropia());
+        assertFalse(fraction.isPropia());
     }
 }

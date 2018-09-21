@@ -9,12 +9,16 @@ public class FractionTest {
     private Fraction fraction;
     private Fraction fractionImpropia;
     private Fraction fractionPropia;
+    private Fraction fractionEquivalente;
+    private Fraction fractionNoEquivalente;
 
     @BeforeEach
     void before() {
         fraction = new Fraction(4, 2);
         fractionImpropia = new Fraction(10, 5);
         fractionPropia = new Fraction(2, 5);
+        fractionEquivalente = new Fraction(6,3);
+        fractionNoEquivalente = new Fraction(7,2);
     }
 
     @Test
@@ -62,5 +66,11 @@ public class FractionTest {
         assertTrue(fractionPropia.isPropia());
         assertFalse(fractionImpropia.isPropia());
         assertFalse(fraction.isPropia());
+    }
+
+    @Test
+    void testIsEquivalente() {
+        assertTrue(fraction.isEquivalente(fractionEquivalente));
+        assertFalse(fraction.isEquivalente(fractionNoEquivalente));
     }
 }

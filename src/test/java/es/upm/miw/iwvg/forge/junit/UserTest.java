@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class UserTest {
 
@@ -38,5 +39,12 @@ public class UserTest {
     @Test
     void testFamilyName(){
         assertNotEquals("García", this.user.getFamilyName());
+    }
+
+    @Test
+    void testNameToUpperCase() {
+        assertNotNull(user);
+        user.nameToUpperCase();
+        assertEquals("JESÚS", user.getName());
     }
 }
